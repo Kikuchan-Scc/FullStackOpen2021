@@ -36,8 +36,8 @@ const generateId = () => {
   const maxId = notes.length > 0 ? Math.max(...notes.map(n => n.id)) : 0
   return maxId + 1
 }
-
-app.post('/api/notes', (req, res) => {    //数据写入
+//数据写入
+app.post('/api/notes', (req, res) => {    
   const body = req.body
 //如果接收到的数据缺少content 属性的值，服务器将使用状态码400 bad request响应请求
   if(!body.content) {     
